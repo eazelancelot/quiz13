@@ -13,6 +13,7 @@ import com.example.quiz13.service.ifs.QuizService;
 import com.example.quiz13.vo.BasicRes;
 import com.example.quiz13.vo.CreateReq;
 import com.example.quiz13.vo.DeleteReq;
+import com.example.quiz13.vo.FillinReq;
 import com.example.quiz13.vo.GetQuestionsRes;
 import com.example.quiz13.vo.SearchReq;
 import com.example.quiz13.vo.SearchRes;
@@ -62,6 +63,11 @@ public class QuizServiceController {
 	@PostMapping(value = "quiz/delete")
 	public BasicRes delete(@Valid @RequestBody DeleteReq req) {
 		return quizService.delete(req);
+	}
+	
+	@PostMapping(value = "quiz/fillin")
+	public BasicRes fillin(@Valid @RequestBody FillinReq req) {
+		return feedbackService.fillin(req);
 	}
 	
 	@PostMapping(value = "quiz/statistics")
